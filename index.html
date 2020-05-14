@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>COCO</title>
+  </head>
+  <body>
+    <button id="getCurrencies">Click me</button>
+
+    <script>
+      let button;
+
+      function getCurrencyList() {
+        fetch('https://api.frankfurter.app/latest').then(resp => resp.json()).then(resp => {
+          let select = document.createElement('select');
+          let arrayOfCurrencies = Object.keys(resp.rates);
+          for (let currency of arrayOfCurrencies) {
+            let option = document.createElement('option');
+            option.value = currency;
+            option.innerText = currency;
+            select.appendChild(option);
+          }
+          document.getElementsByTagName('body')[0].appendChild(select);
+        })
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        button = document.getElementById('getCurrencies');
+        button.addEventListener('click', getCurrencyList);
+      });
+    </script>
+  </body>
+</html>
