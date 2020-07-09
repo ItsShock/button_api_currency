@@ -10,26 +10,7 @@
     <button id="getCurrencies">Click me</button>
 
     <script>
-      let button;
-
-      function getCurrencyList() {
-        fetch('https://api.frankfurter.app/latest').then(resp => resp.json()).then(resp => {
-          let select = document.createElement('select');
-          let arrayOfCurrencies = Object.keys(resp.rates);
-          for (let currency of arrayOfCurrencies) {
-            let option = document.createElement('option');
-            option.value = currency;
-            option.innerText = currency;
-            select.appendChild(option);
-          }
-          document.getElementsByTagName('body')[0].appendChild(select);
-        })
-      }
-
-      document.addEventListener('DOMContentLoaded', () => {
-        button = document.getElementById('getCurrencies');
-        button.addEventListener('click', getCurrencyList);
-      });
+      
     </script>
   </body>
 </html>
