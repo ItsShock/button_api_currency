@@ -10,7 +10,31 @@
     <button id="getCurrencies">Click me</button>
 
     <script>
-      
+      const button = document.querySelector("#getCurrencies");
+
+      var currency;
+
+      button.addEventListener("click", (e) => {
+        const getCurrencyList = () => fetch('https://api.frankfurter.app/latest')
+        .then(data => data.json()) 
+        .then(data => {
+          currency = data.rates
+        })
+        .catch(err => console.log(err));
+        getCurrencyList();
+        const select = document.createElement("select");
+        const option = document.createElement("option");
+        console.log(select);
+        console.log(currency);
+
+        select.appendChild(option);
+        document.body.appendChild(select);
+      });
     </script>
   </body>
 </html>
+
+<!-- Korzystając z Frankfurter API, stwórz przycisk o id=”getCurrencies”, który wywołuje funkcję getCurrencyList, która wykona fetch wywołującą zapytanie pod adres https://api.frankfurter.app/latest. 
+
+Zwrócony zostanie obiekt z listą dostępnych walut i ich wartości względem EUR. Twoim zadaniem jest stworzyć w JS element <select> i włożyć do niego <option>,
+które będą miały w sobie tekst odpowiadający kodom walut, a oprócz tego atrybut value ustawiony na taką samą wartość -->

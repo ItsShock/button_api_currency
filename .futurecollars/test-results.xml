@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="3" failures="0" time="6.569">
+  <testsuite name="Zadanie nr. 2" errors="0" failures="0" skipped="0" timestamp="2021-04-28T16:52:49" time="5.297" tests="3">
+    <testcase classname="Zadanie nr. 2" name="Dodano button o odpowiednim ID" time="0.005">
+    </testcase>
+    <testcase classname="Zadanie nr. 2" name="Po kliknięciu w button, powinno pobrać listę walut i dodać je jako options do select" time="0.028">
+    </testcase>
+    <testcase classname="Zadanie nr. 2" name="Wszystko powinno być poprzedzone poprawnym requestem" time="0">
+    </testcase>
+  </testsuite>
+</testsuites>
